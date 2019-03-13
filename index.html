@@ -541,6 +541,22 @@
                   </ul>
               </td>
           </tr>
+          <tr>
+              <td>GET</td>
+              <td>/partner/v1/production/search/byName</td>
+              <td><a href="#ProductionSearchExample">Search for production details by name</a></td>
+              <td>
+                  <ul>
+                      <li>name - production name to search for</li>
+                  </ul>
+              </td>
+              <td></td>
+              <td>
+                  <ul>
+                      <li><a href="#ProductionDetailsResponseModel">ProductionDetailsResponse</a></li>
+                  </ul>
+              </td>
+          </tr>
           </tbody>
       </table>
       <h3>Showtimes</h3>
@@ -858,6 +874,80 @@
     "releaseDate": "2018-09-14"
   }
   ]
+}
+              </pre></td>
+          </tr>
+          </tbody>
+      </table>
+      <br/>
+      <table id="ProductionSearchExample">
+          <tbody>
+          <tr>
+              <td>URL</td>
+              <td>http://api-beta.atomtickets.com/partner/v1/production/search/byName</td>
+          </tr>
+          <tr>
+              <td>Header</td>
+              <td>x-api-key</td>
+          </tr>
+          <tr>
+              <td>Query Params</td>
+              <td>name=Captain Marvel</td>
+          </tr>
+          <tr>
+              <td>Request</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>Response</td>
+              <td><pre>
+{
+    "productionDetails": [
+        {
+            "id": "B00362154100",
+            "name": "Captain Marvel",
+            "productionMedia": {
+                "imageData": {
+                    "coverImageUrl": "https://images.atomtickets.com/image/upload/w_520,h_780,q_auto/v1/ingestion-images-archive/archive/rm123368960.jpg",
+                    "promoImageUrls": []
+                },
+                "trailerData": {
+                    "trailerUrls": [
+                        "https://www.totaleclips.com/Bounce/b?eclipid=e162647&bitrateid=449&vendorid=17871",
+                        "https://www.totaleclips.com/Bounce/b?eclipid=e161939&bitrateid=449&vendorid=17871"
+                    ]
+                }
+            },
+            "contributors": {
+                "cast": [
+                    {
+                        "name": "Brie Larson",
+                        "characterName": "Carol Danvers, Vers, Captain Marvel"
+                    },
+                    {
+                        "name": "Samuel L. Jackson",
+                        "characterName": "Nick Fury"
+                    }
+                ],
+                "crew": [
+                    {
+                        "name": "Anna Boden",
+                        "role": "Director"
+                    }
+                ]
+            },
+            "synopsis": "Carol Danvers becomes one of the universe's most powerful heroes.",
+            "advisoryRating": "PG-13",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Sci-Fi"
+            ],
+            "runtimeMinutes": 124,
+            "releaseDate": "2019-03-07",
+            "atomUserScore": 6
+        }
+    ]
 }
               </pre></td>
           </tr>
