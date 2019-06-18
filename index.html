@@ -227,11 +227,18 @@
     lon: Double
   )
       </pre>
+      <pre id="PropertiesModel">
+  Properties(
+    supportsConcessions: Boolean
+  )
+      </pre>
       <pre id="VenueModel">
   Venue(
     id: String,
     name: String,
-    address: Address
+    address: Address,
+    properties: Properties,
+    venueUrl: Option[String]
   )
       </pre>
       <pre id="VenueDetailModel">
@@ -298,7 +305,8 @@
     genres: Option[List[String]],
     runtimeMinutes: Option[Int],
     releaseDate: Option[String], // YYYY-MM-DD
-    atomUserScore: Option[Double]
+    atomUserScore: Option[Double],
+    productionUrl: Option[String]
   )
       </pre>
       <pre id="ProductionDetailsResponseModel">
