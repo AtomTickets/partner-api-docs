@@ -662,34 +662,62 @@
               <td>lat=34.0195&amp;lon=-118.4912&amp;radius=50&amp;pageSize=2</td>
           </tr>
           <tr>
-              <td>Request</td>
-              <td></td>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X GET \
+  'https://api-beta.atomtickets.com/partner/v1/venue/details/byLocation?lat=34.0195&lon=-118.4912&radius=50&pageSize=2' \
+  -H 'x-api-key: {AtomPartnerApiKey}'
+              </pre></td>
           </tr>
           <tr>
               <td>Response</td>
               <td><pre>
 {
-  "venueDetails": [
-  {
-    "venue": {
-      "id": "C00110921804",
-      "name": "AMC Loews Broadway 4"
-    },
-    "kmDistance": 0.628527332801801
-  },
-  {
-    "venue": {
-      "id": "C00401723167",
-      "name": "AMC Santa Monica 7"
-    },
-    "kmDistance": 0.6647355560508852
-  }
-  ],
-  "pageInfo": {
-    "page": 1,
-    "pageSize": 2,
-    "totalPages": 56
-  }
+    "venueDetails": [
+        {
+            "venue": {
+                "id": "C00110921804",
+                "name": "AMC Loews Broadway 4",
+                "address": {
+                    "line": "1441 Third Street Promenade",
+                    "city": "Santa Monica",
+                    "state": "CA",
+                    "postal": "90401",
+                    "lat": 34.014801025390625,
+                    "lon": -118.49500274658203
+                },
+                "properties": {
+                    "supportsConcessions": true
+                },
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00110921804"
+            },
+            "kmDistance": 0.628527332801801
+        },
+        {
+            "venue": {
+                "id": "C00401723167",
+                "name": "AMC Santa Monica 7",
+                "address": {
+                    "line": "1310 3rd Street",
+                    "city": "Santa Monica",
+                    "state": "CA",
+                    "postal": "90401",
+                    "lat": 34.016693115234375,
+                    "lon": -118.49755859375
+                },
+                "properties": {
+                    "supportsConcessions": true
+                },
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00401723167"
+            },
+            "kmDistance": 0.6647355560508852
+        }
+    ],
+    "pageInfo": {
+        "page": 1,
+        "pageSize": 2,
+        "totalPages": 52
+    }
 }
               </pre></td>
           </tr>
@@ -707,11 +735,23 @@
               <td>x-api-key</td>
           </tr>
           <tr>
-              <td>Query Params</td>
-              <td></td>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X POST \
+  https://api-beta.atomtickets.com/partner/v1/venue/details/byIds \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {AtomPartnerApiKey}' \
+  -d '{
+    "ids":["C0057070265"],
+    "location":{
+        "lat":34.0195,
+        "lon":-118.4912
+    }
+}'
+              </pre></td>
           </tr>
           <tr>
-              <td>Request</td>
+              <td>Request Body</td>
               <td><pre>
 {
     "ids": ["C0057070265"],
@@ -726,15 +766,27 @@
               <td>Response</td>
               <td><pre>
 {
-  "venueDetails": [
-  {
-    "venue": {
-      "id": "C0057070265",
-      "name": "Regal L.A. LIVE: A Barco Innovation Center"
-    },
-    "kmDistance": 2.383671824436259
-  }
-  ]
+    "venueDetails": [
+        {
+            "venue": {
+                "id": "C0057070265",
+                "name": "Regal LA Live & 4DX",
+                "address": {
+                    "line": "1000 West Olympic Boulevard",
+                    "city": "Los Angeles",
+                    "state": "CA",
+                    "postal": "90015",
+                    "lat": 34.031402587890625,
+                    "lon": -118.46971130371094
+                },
+                "properties": {
+                    "supportsConcessions": false
+                },
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C0057070265"
+            },
+            "kmDistance": 2.383671824436259
+        }
+    ]
 }
               </pre></td>
           </tr>
@@ -756,34 +808,62 @@
               <td>term=amc&amp;lat=34.0195&amp;lon=-118.4912&amp;radius=50&amp;pageSize=2</td>
           </tr>
           <tr>
-              <td>Request</td>
-              <td></td>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X GET \
+  'https://api-beta.atomtickets.com/partner/v1/venue/details/search?term=amc&lat=34.0195&lon=-118.4912&radius=50&pageSize=2' \
+  -H 'x-api-key: {AtomPartnerApiKey}'
+              </pre></td>
           </tr>
           <tr>
               <td>Response</td>
               <td><pre>
 {
-  "venueDetails": [
-  {
-    "venue": {
-      "id": "C00110921804",
-      "name": "AMC Loews Broadway 4"
-     },
-     "kmDistance": 0.628527332801801
-  },
-  {
-    "venue": {
-      "id": "C00401723167",
-      "name": "AMC Santa Monica 7"
-     },
-     "kmDistance": 0.6647355560508852
-   }
-   ],
-  "pageInfo": {
-    "page": 1,
-    "pageSize": 2,
-    "totalPages": 13
-  }
+    "venueDetails": [
+        {
+            "venue": {
+                "id": "C00110921804",
+                "name": "AMC Loews Broadway 4",
+                "address": {
+                    "line": "1441 Third Street Promenade",
+                    "city": "Santa Monica",
+                    "state": "CA",
+                    "postal": "90401",
+                    "lat": 34.014801025390625,
+                    "lon": -118.49500274658203
+                },
+                "properties": {
+                    "supportsConcessions": true
+                },
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00110921804"
+            },
+            "kmDistance": 0.628527332801801
+        },
+        {
+            "venue": {
+                "id": "C00401723167",
+                "name": "AMC Santa Monica 7",
+                "address": {
+                    "line": "1310 3rd Street",
+                    "city": "Santa Monica",
+                    "state": "CA",
+                    "postal": "90401",
+                    "lat": 34.016693115234375,
+                    "lon": -118.49755859375
+                },
+                "properties": {
+                    "supportsConcessions": true
+                },
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00401723167"
+            },
+            "kmDistance": 0.6647355560508852
+        }
+    ],
+    "pageInfo": {
+        "page": 1,
+        "pageSize": 2,
+        "totalPages": 10
+    }
 }
               </pre></td>
           </tr>
@@ -805,25 +885,23 @@
               <td>isoStartDate=2018-09-13T07:00:00Z&amp;isoEndDate=2018-09-14T07:00:00Z</td>
           </tr>
           <tr>
-              <td>Request</td>
-              <td></td>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X GET \
+  'https://api-beta.atomtickets.com/partner/v1/production/ids/byVenue/C00110921804?isoStartDate=2019-10-10T07:00:00Z&isoEndDate=2019-10-11T07:00:00Z' \
+  -H 'x-api-key: {AtomPartnerApiKey}'
+              </pre></td>
           </tr>
           <tr>
               <td>Response</td>
               <td><pre>
 {
-  "ids": [
-    "B00809994585",
-    "B00418470916",
-    "B00311557956",
-    "B0042462790",
-    "B00416490251",
-    "B00378064458",
-    "B00879153184",
-    "B00150921162",
-    "B00784814755",
-    "B00148944929"
-  ]
+    "ids": [
+        "B0093420570",
+        "B00437681129",
+        "B00685932020",
+        "B00309261556"
+    ]
 }
               </pre></td>
           </tr>
@@ -841,13 +919,19 @@
               <td>x-api-key</td>
           </tr>
           <tr>
-              <td>Query Params</td>
-              <td></td>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X POST \
+  https://api-beta.atomtickets.com/partner/v1/production/details/byIds \
+  -H 'x-api-key: {AtomPartnerApiKey}' \
+  -d '{
+    "ids":["B00809994585"]
+}'
+              </pre></td>
           </tr>
           <tr>
-              <td>Request</td>
+              <td>Request Body</td>
               <td><pre>
-
 {
     "ids":["B00809994585"]
 }
@@ -857,32 +941,50 @@
               <td>Response</td>
               <td><pre>
 {
-  "productionDetails": [
-  {
-    "id": "B00809994585",
-    "name": "The Predator",
-    "productionMedia": {
-      "imageData": {
-        "coverImageUrl": "&lt;imageUrl&gt;",
-        "promoImageUrls": ["&lt;imageUrl&gt;"]
-      },
-      "trailerData": {
-        "trailerUrls": ["&lt;trailerUrl&gt;"]
-      }
-    },
-    "synopsis": "Synopsis",
-    "advisoryRating": "No Rating",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Horror",
-      "Sci-Fi",
-      "Thriller"
-    ],
-    "runtimeMinutes": 0,
-    "releaseDate": "2018-09-14"
-  }
-  ]
+    "productionDetails": [
+        {
+            "id": "B00809994585",
+            "name": "The Predator",
+            "productionMedia": {
+                "imageData": {
+                    "coverImageUrl": "https://images.atomtickets.com/image/upload/w_520,h_780,q_auto/v1/ingestion-images-archive/archive/rm3117827584.jpg",
+                    "promoImageUrls": [
+                        "https://images.atomtickets.com/image/upload/h_960,q_auto/v1526062779/ingestion-images-archive/archive/1526062778201_227902_cops_1.png"
+                    ]
+                },
+                "trailerData": {
+                    "trailerUrls": []
+                }
+            },
+            "contributors": {
+                "cast": [
+                    {
+                        "name": "Boyd Holbrook",
+                        "characterName": "Quinn McKenna"
+                    }
+                ],
+                "crew": [
+                    {
+                        "name": "Shane Black",
+                        "role": "Director"
+                    }
+                ]
+            },
+            "synopsis": "When a young boy accidentally triggers the universe's most lethal hunters return to Earth, only a ragtag crew of ex-soldiers and a disgruntled science teacher can prevent the end of the human race.",
+            "advisoryRating": "No Rating",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Horror",
+                "Sci-Fi",
+                "Thriller"
+            ],
+            "runtimeMinutes": 0,
+            "releaseDate": "2018-09-14",
+            "atomUserScore": 10.0,
+            "productionUrl": "http://rw-beta.atomtickets.com/movies/redirect/B00809994585"
+        }
+    ]
 }
               </pre></td>
           </tr>
@@ -904,8 +1006,12 @@
               <td>name=Captain Marvel</td>
           </tr>
           <tr>
-              <td>Request</td>
-              <td></td>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X GET \
+  'https://api-beta.atomtickets.com/partner/v1/production/search/byName?name=Captain%20Marvel' \
+  -H 'x-api-key: {AtomPartnerApiKey}'
+              </pre></td>
           </tr>
           <tr>
               <td>Response</td>
@@ -922,8 +1028,7 @@
                 },
                 "trailerData": {
                     "trailerUrls": [
-                        "https://www.totaleclips.com/Bounce/b?eclipid=e162647&bitrateid=449&vendorid=17871",
-                        "https://www.totaleclips.com/Bounce/b?eclipid=e161939&bitrateid=449&vendorid=17871"
+                        "https://www.totaleclips.com/Bounce/b?eclipid=e162647&bitrateid=449&vendorid=17871"
                     ]
                 }
             },
@@ -932,10 +1037,6 @@
                     {
                         "name": "Brie Larson",
                         "characterName": "Carol Danvers, Vers, Captain Marvel"
-                    },
-                    {
-                        "name": "Samuel L. Jackson",
-                        "characterName": "Nick Fury"
                     }
                 ],
                 "crew": [
@@ -945,16 +1046,16 @@
                     }
                 ]
             },
-            "synopsis": "Carol Danvers becomes one of the universe's most powerful heroes.",
+            "synopsis": "The story follows Carol Danvers as she becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.  Set in the 1990s, Captain Marvel is an all-new adventure from a previously unseen period in the history of the Marvel Cinematic Universe.",
             "advisoryRating": "PG-13",
             "genres": [
-                "Action",
-                "Adventure",
-                "Sci-Fi"
+                "Action/Adventure",
+                "SciFi/Fantasy"
             ],
             "runtimeMinutes": 124,
-            "releaseDate": "2019-03-07",
-            "atomUserScore": 6
+            "releaseDate": "2019-03-08",
+            "atomUserScore": 6.7,
+            "productionUrl": "http://rw-beta.atomtickets.com/movies/redirect/B00362154100"
         }
     ]
 }
@@ -981,8 +1082,12 @@ X-Atom-Partner
               <td>isoStartDate=2018-09-14T21:00:00Z&amp;isoEndDate=2018-09-14T21:30:00Z</td>
           </tr>
           <tr>
-              <td>Request</td>
-              <td></td>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X GET \
+  'https://api-beta.atomtickets.com/partner/v1/showtime/details/byVenue/C00110921804?isoStartDate=2018-09-14T07:00:00Z&isoEndDate=2018-09-15T07:00:00Z' \
+  -H 'x-api-key: {AtomPartnerApiKey}'
+              </pre></td>
           </tr>
           <tr>
               <td>Response</td>
@@ -1073,7 +1178,7 @@ X-Atom-Partner
     "attributeMap": {
         "RESERVED": {
             "id": "RESERVED",
-            "iconUrl": "&lt;imageUrl&gt;",
+            "iconUrl": "https://images.atomtickets.com/image/upload/q_auto/v1/client-image-repo/attributes/RESERVED_V2_1517873333535.png,
             "friendlyName": "Reserved Seating",
             "description": "Description"
         }
@@ -1097,11 +1202,18 @@ x-api-key
               </pre></td>
           </tr>
           <tr>
-              <td>Query Params</td>
-              <td></td>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X POST \
+  https://api-beta.atomtickets.com/partner/v1/showtime/details/byIds \
+  -H 'x-api-key: {AtomPartnerApiKey}' \
+  -d '{
+    "ids":["D00776442169"]
+}'
+              </pre></td>
           </tr>
           <tr>
-              <td>Request</td>
+              <td>Request Body</td>
               <td><pre>
 {
     "ids":["D00747321039"]
@@ -1114,35 +1226,44 @@ x-api-key
 {
     "showtimeDetails": [
         {
-            "showtimeId": "D00747321039",
-            "productionId": "B00879153184",
+            "showtimeId": "D00776442169",
+            "productionId": "B00418470916",
             "venueId": "C0057070265",
             "offerData": {
-                "offers": [
-                    {
-                        "label": "Ticket",
-                        "price": {
-                            "value": 12.75,
-                            "currencyCode": "USD"
-                        }
-                    }
-                ]
+                "offers": []
             },
-            "utcShowtimeStart": "2018-09-14T20:30:00Z",
-            "localShowtimeStart": "2018-09-14T13:30:00-07:00",
+            "utcShowtimeStart": "2018-09-12T20:30:00Z",
+            "localShowtimeStart": "2018-09-12T13:30:00-07:00",
             "attributes": [
                 "STADIUM-SEATING",
                 "CC"
-            ]
+            ],
+            "checkoutUrl": "http://rw-beta.atomtickets.com/checkout/redirect?productionId=B00418470916&venueId=C0057070265&localShowtime=2018-09-12T13:30:00&iref=atomapi",
+            "availableInventory": 1
         }
     ],
     "preOrderDetails": [],
     "attributeMap": {
         "STADIUM-SEATING": {
             "id": "STADIUM-SEATING",
-            "iconUrl": "&lt;imageUrl&gt;",
+            "type": "SECONDARY",
+            "iconUrl": "https://images.atomtickets.com/image/upload/q_auto/v1/client-image-repo/attributes/STADIUM-SEATING_V2_1517873031977.png",
             "friendlyName": "Stadium seating",
             "description": "Stadium seating."
+        },
+        "CC": {
+            "id": "CC",
+            "type": "SECONDARY",
+            "iconUrl": "https://images.atomtickets.com/image/upload/q_auto/v1/client-image-repo/attributes/CC_V2_1517872363908.png",
+            "friendlyName": "CC",
+            "description": "Closed Captioning devices display a movie's dialogue and sound effects as text; captions are not shown on the main screen. Devices available by request."
+        },
+        "STANDARD-FORMAT": {
+            "id": "STANDARD-FORMAT",
+            "type": "SECONDARY",
+            "iconUrl": "https://images.atomtickets.com/image/upload/q_auto/v1/client-image-repo/attributes/STANDARD-FORMAT_V2_1517872101839.png",
+            "friendlyName": "Standard Format",
+            "description": "Traditional movie format with 16:9 aspect ratio."
         }
     }
 }
@@ -1165,11 +1286,23 @@ X-Atom-Partner
               </pre></td>
           </tr>
           <tr>
-              <td>Query Params</td>
-              <td></td>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X POST \
+  https://api-beta.atomtickets.com/partner/v1/showtime/details/forVenues \
+  -H 'x-api-key: b4fUkljP8a3Vve9KZCsbN5OGszb72N1p2D0ZtSGH' \
+  -d '{
+    "venueIds":["C0057070265","C00110921804","C00401723167","C00928817799"],
+    "isoDateBounds":{
+        "isoStartDate":"2019-02-25T07:00:00Z",
+        "isoEndDate":"2019-02-26T07:00:00Z"
+    },
+    "includeProductionDetails":true
+}'
+              </pre></td>
           </tr>
           <tr>
-              <td>Request</td>
+              <td>Request Body</td>
               <td><pre>
 {
     "venueIds":["C0057070265","C00110921804","C00401723167","C00928817799"],
@@ -1253,7 +1386,7 @@ X-Atom-Partner
     "attributeMap": {
         "DVS": {
             "id": "DVS",
-            "iconUrl": "&lt;imageUrl&gt;",
+            "iconUrl": "https://images.atomtickets.com/image/upload/q_auto/v1/client-image-repo/attributes/DVS_V2_1517871554190.png",
             "friendlyName": "Descriptive Video",
             "description": "Description"
         }
@@ -1264,7 +1397,7 @@ X-Atom-Partner
             "name": "Gone with the Wind 80th Anniversary",
             "productionMedia": {
                 "imageData": {
-                    "coverImageUrl": "&lt;imageUrl&gt;",
+                    "coverImageUrl": "https://images.atomtickets.com/image/upload/ingestion-images-archive-prod/archive/coming_soon_poster.jpg",
                     "promoImageUrls": []
                 },
                 "trailerData": {
