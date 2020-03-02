@@ -495,10 +495,13 @@
           <tr>
               <td>GET</td>
               <td>/partner/v1/venues/byVendorVenueId/&lt;vendorVenueId&gt;</td>
-              <td><a href="#AtomVenueForVendorVenueExample">Get Atom Venue for VendorVenueId</a></td>
+              <td><a href="#AtomVenueForVendorVenueExample">Query for venue by Vendor Venue Id</a></td>
               <td>
               </td>
               <td>
+                  <ul>
+                      <li>circuitId - limit query to specific circuit</li>
+                  </ul>
               </td>
               <td>
                   <ul>
@@ -584,10 +587,14 @@
           <tr>
               <td>GET</td>
               <td>/partner/v1/productions/byVendorProductionId/&lt;vendorProductionId&gt;</td>
-              <td><a href="#AtomProductionForVendorProductionExample">Get Atom Production for VendorProductionId</a></td>
+              <td><a href="#AtomProductionForVendorProductionExample">Query for production by Vendor Production Id</a></td>
               <td>
               </td>
-              <td></td>
+              <td>
+                  <ul>
+                      <li>circuitId - limit query to specific circuit</li>
+                  </ul>
+              </td>
               <td>
                   <ul>
                       <li><a href="#ProductionDetailsResponseModel">ProductionDetailsResponse</a></li>
@@ -675,11 +682,14 @@
               <td>GET</td>
               <td>/partner/v1/venues/&lt;venueId&gt;/showtimes/byVendorShowtimeId/&lt;vendorShowtimeId&gt;</td>
               <td>
-                  <p><a href="#ShowtimeDetailsForVendorShowtimeExample">Get the showtime details for the atom venue and VendorShowtimeId</a></p>
+                  <p><a href="#ShowtimeDetailsForVendorShowtimeExample">Query for showtime by venue id and Vendor Showtime Id</a></p>
               </td>
               <td>
               </td>
               <td>
+                  <ul>
+                      <li>circuitId - limit query to specific circuit</li>
+                  </ul>
               </td>
               <td>
                   <ul>
@@ -691,11 +701,14 @@
               <td>GET</td>
               <td>/partner/v1/venues/byVendorVenueId/&lt;vendorVenueId&gt;/showtimes/byVendorShowtimeId/&lt;vendorShowtimeId&gt;</td>
               <td>
-                  <p><a href="#ShowtimeDetailsForVendorVenueAndVendorShowtimeExample">Get the showtime details for the VendorVenueId and VendorShowtimeId</a></p>
+                  <p><a href="#ShowtimeDetailsForVendorVenueAndVendorShowtimeExample">Query for showtime by Vendor Venue Id and Vendor Showtime Id</a></p>
               </td>
               <td>
               </td>
               <td>
+                  <ul>
+                      <li>circuitId - limit query to specific circuit</li>
+                  </ul>
               </td>
               <td>
                   <ul>
