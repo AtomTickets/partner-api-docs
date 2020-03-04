@@ -492,6 +492,23 @@
                   </ul>
               </td>
           </tr>
+          <tr>
+              <td>GET</td>
+              <td>/partner/v1/venues/byVendorVenueId/&lt;vendorVenueId&gt;</td>
+              <td><a href="#AtomVenueForVendorVenueExample">Query for venue by Vendor Venue Id</a></td>
+              <td>
+              </td>
+              <td>
+                  <ul>
+                      <li>circuitId - limit query to specific circuit</li>
+                  </ul>
+              </td>
+              <td>
+                  <ul>
+                      <li><a href="#VenueDetailsResponseModel">VenueDetailsResponse</a></li>
+                  </ul>
+              </td>
+          </tr>
           </tbody>
       </table>
       <h3>Productions</h3>
@@ -561,6 +578,23 @@
                   </ul>
               </td>
               <td></td>
+              <td>
+                  <ul>
+                      <li><a href="#ProductionDetailsResponseModel">ProductionDetailsResponse</a></li>
+                  </ul>
+              </td>
+          </tr>
+          <tr>
+              <td>GET</td>
+              <td>/partner/v1/productions/byVendorProductionId/&lt;vendorProductionId&gt;</td>
+              <td><a href="#AtomProductionForVendorProductionExample">Query for production by Vendor Production Id</a></td>
+              <td>
+              </td>
+              <td>
+                  <ul>
+                      <li>circuitId - limit query to specific circuit</li>
+                  </ul>
+              </td>
               <td>
                   <ul>
                       <li><a href="#ProductionDetailsResponseModel">ProductionDetailsResponse</a></li>
@@ -641,6 +675,44 @@
               <td>
                   <ul>
                       <li><a href="#ShowtimeDetailsForVenuesResponseModel">ShowtimeDetailsForVenuesResponse</a></li>
+                  </ul>
+              </td>
+          </tr>
+          <tr>
+              <td>GET</td>
+              <td>/partner/v1/venues/&lt;venueId&gt;/showtimes/byVendorShowtimeId/&lt;vendorShowtimeId&gt;</td>
+              <td>
+                  <p><a href="#ShowtimeDetailsForVendorShowtimeExample">Query for showtime by venue id and Vendor Showtime Id</a></p>
+              </td>
+              <td>
+              </td>
+              <td>
+                  <ul>
+                      <li>circuitId - limit query to specific circuit</li>
+                  </ul>
+              </td>
+              <td>
+                  <ul>
+                      <li><a href="#ShowtimeDetailsResponseModel">ShowtimeDetailsResponse</a></li>
+                  </ul>
+              </td>
+          </tr>
+          <tr>
+              <td>GET</td>
+              <td>/partner/v1/venues/byVendorVenueId/&lt;vendorVenueId&gt;/showtimes/byVendorShowtimeId/&lt;vendorShowtimeId&gt;</td>
+              <td>
+                  <p><a href="#ShowtimeDetailsForVendorVenueAndVendorShowtimeExample">Query for showtime by Vendor Venue Id and Vendor Showtime Id</a></p>
+              </td>
+              <td>
+              </td>
+              <td>
+                  <ul>
+                      <li>circuitId - limit query to specific circuit</li>
+                  </ul>
+              </td>
+              <td>
+                  <ul>
+                      <li><a href="#ShowtimeDetailsResponseModel">ShowtimeDetailsResponse</a></li>
                   </ul>
               </td>
           </tr>
@@ -876,6 +948,55 @@ curl -X GET \
           </tbody>
       </table>
       <br/>
+      <table id="AtomVenueForVendorVenueExample">
+          <tbody>
+          <tr>
+              <td>URL</td>
+              <td>http://api-beta.atomtickets.com/partner/v1/venues/byVendorVenueId/0001</td>
+          </tr>
+          <tr>
+              <td>Header</td>
+              <td>x-api-key</td>
+          </tr>
+          <tr>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X GET \
+  'https://api-beta.atomtickets.com/partner/v1/venues/byVendorVenueId/0001' \
+  -H 'x-api-key: {AtomPartnerApiKey}'
+              </pre></td>
+          </tr>
+          <tr>
+              <td>Response</td>
+              <td><pre>
+{
+    "venueDetails": [
+        {
+            "venue": {
+                "id": "C00889608713",
+                "name": "Flix Brewhouse - Des Moines",
+                "address": {
+                    "line": "3800 Merle Hay Road",
+                    "city": "Des Moines",
+                    "state": "IA",
+                    "postal": "50310",
+                    "lat": 41.629539489746094,
+                    "lon": -93.69798278808594
+                },
+                "properties": {
+                    "supportsConcessions": true,
+                    "supported": true
+                },
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00889608713"
+            }
+        }
+    ]
+}
+              </pre></td>
+          </tr>
+          </tbody>
+      </table>
+      <br/>
       <table id="ProductionsByVenueExample">
           <tbody>
           <tr>
@@ -1062,6 +1183,73 @@ curl -X GET \
             "releaseDate": "2019-03-08",
             "atomUserScore": 6.7,
             "productionUrl": "http://rw-beta.atomtickets.com/movies/redirect/B00362154100"
+        }
+    ]
+}
+              </pre></td>
+          </tr>
+          </tbody>
+      </table>
+      <br/>
+      <table id="AtomProductionForVendorProductionExample">
+          <tbody>
+          <tr>
+              <td>URL</td>
+              <td>http://api-beta.atomtickets.com/partner/v1/productions/byVendorProductionId/0000001176</td>
+          </tr>
+          <tr>
+              <td>Header</td>
+              <td>x-api-key</td>
+          </tr>
+          <tr>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X GET \
+  'https://api-beta.atomtickets.com/partner/v1/productions/byVendorProductionId/0000001176' \
+  -H 'x-api-key: {AtomPartnerApiKey}'
+              </pre></td>
+          </tr>
+          <tr>
+              <td>Response</td>
+              <td><pre>
+{
+    "productionDetails": [
+        {
+            "id": "B00849252296",
+            "name": "The Last Movie",
+            "productionMedia": {
+                "imageData": {
+                    "coverImageUrl": "https://images.atomtickets.com/image/upload/w_520,h_780,q_auto/v1/ingestion-images-archive/archive/rm1217998848.jpg",
+                    "promoImageUrls": []
+                },
+                "trailerData": {
+                    "trailerUrls": [
+                        "https://www.totaleclips.com/Bounce/b?eclipid=e164394&bitrateid=449&vendorid=17871"
+                    ]
+                }
+            },
+            "contributors": {
+                "cast": [
+                    {
+                        "name": "Julie Adams",
+                        "characterName": "Mrs. Anderson"
+                    }
+                ],
+                "crew": [
+                    {
+                        "name": "Dennis Hopper",
+                        "role": "Director"
+                    }
+                ]
+            },
+            "synopsis": "The Last Movie follows a Hollywood movie crew in the midst of making a western in a remote Peruvian village. When production wraps, Hopper, as the baleful stuntman Kansas, remains, attempting to find redemption in the isolation of Peru and the arms of a former prostitute. Meanwhile, the local Indians have taken over the abandoned set and begun to stage a ritualistic re-enactment of the production - with Kansas as their sacrificial lamb.",
+            "advisoryRating": "R",
+            "genres": [
+                "Drama"
+            ],
+            "runtimeMinutes": 108,
+            "releaseDate": "2018-08-03",
+            "productionUrl": "http://rw-beta.atomtickets.com/movies/redirect/B00849252296"
         }
     ]
 }
@@ -1427,5 +1615,136 @@ curl -X POST \
           </tr>
           </tbody>
       </table>
+      <br/>
+      <table id="ShowtimeDetailsForVendorShowtimeExample">
+          <tbody>
+          <tr>
+              <td>URL</td>
+              <td>http://api-beta.atomtickets.com/partner/v1/venues/C00682352378/showtimes/byVendorShowtimeId/19</td>
+          </tr>
+          <tr>
+              <td>Header</td>
+              <td><pre>
+x-api-key
+X-Atom-Partner
+              </pre></td>
+          </tr>
+          <tr>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X GET \
+  'https://api-beta.atomtickets.com/partner/v1/venues/C00682352378/showtimes/byVendorShowtimeId/19' \
+  -H 'x-api-key: {AtomPartnerApiKey}'
+              </pre></td>
+          </tr>
+          <tr>
+              <td>Response</td>
+              <td><pre>
+{
+    "showtimeDetails": [
+        {
+            "showtimeId": "D00999351728",
+            "productionId": "B00849252296",
+            "venueId": "C00682352378",
+            "offerData": {
+                "offers": []
+            },
+            "utcShowtimeStart": "2019-09-13T20:05:00Z",
+            "localShowtimeStart": "2019-09-13T16:05:00-04:00",
+            "attributes": [
+                "RESERVED"
+            ],
+            "checkoutUrl": "http://rw-beta.atomtickets.com/checkout/redirect?productionId=B00849252296&venueId=C00682352378&localShowtime=2019-09-13T16:05:00&iref=atomapi",
+            "availableInventory": 1
+        }
+    ],
+    "preOrderDetails": [],
+    "attributeMap": {
+        "RESERVED": {
+            "id": "RESERVED",
+            "type": "SECONDARY",
+            "iconUrl": "https://images.atomtickets.com/image/upload/q_auto/v1/client-image-repo/attributes/RESERVED_V2_1517873333535.png",
+            "friendlyName": "Reserved Seating",
+            "description": "This showtime features reserved seating so you can pick your seats ahead of time."
+        },
+        "STANDARD-FORMAT": {
+            "id": "STANDARD-FORMAT",
+            "type": "SECONDARY",
+            "iconUrl": "https://images.atomtickets.com/image/upload/q_auto/v1/client-image-repo/attributes/STANDARD-FORMAT_V2_1517872101839.png",
+            "friendlyName": "Standard Format",
+            "description": "Traditional movie format with 16:9 aspect ratio."
+        }
+    }
+}
+              </pre></td>
+          </tr>
+          </tbody>
+      </table>
+      <br/>
+      <table id="ShowtimeDetailsForVendorVenueAndVendorShowtimeExample">
+          <tbody>
+          <tr>
+              <td>URL</td>
+              <td>http://api-beta.atomtickets.com/partner/v1/venues/byVendorVenueId/511/showtimes/byVendorShowtimeId/19</td>
+          </tr>
+          <tr>
+              <td>Header</td>
+              <td><pre>
+x-api-key
+X-Atom-Partner
+              </pre></td>
+          </tr>
+          <tr>
+              <td>cURL Request</td>
+              <td><pre>
+curl -X GET \
+  'https://api-beta.atomtickets.com/partner/v1/venues/byVendorVenueId/511/showtimes/byVendorShowtimeId/19' \
+  -H 'x-api-key: {AtomPartnerApiKey}'
+              </pre></td>
+          </tr>
+          <tr>
+              <td>Response</td>
+              <td><pre>
+{
+    "showtimeDetails": [
+        {
+            "showtimeId": "D00999351728",
+            "productionId": "B00849252296",
+            "venueId": "C00682352378",
+            "offerData": {
+                "offers": []
+            },
+            "utcShowtimeStart": "2019-09-13T20:05:00Z",
+            "localShowtimeStart": "2019-09-13T16:05:00-04:00",
+            "attributes": [
+                "RESERVED"
+            ],
+            "checkoutUrl": "http://rw-beta.atomtickets.com/checkout/redirect?productionId=B00849252296&venueId=C00682352378&localShowtime=2019-09-13T16:05:00&iref=atomapi",
+            "availableInventory": 1
+        }
+    ],
+    "preOrderDetails": [],
+    "attributeMap": {
+        "RESERVED": {
+            "id": "RESERVED",
+            "type": "SECONDARY",
+            "iconUrl": "https://images.atomtickets.com/image/upload/q_auto/v1/client-image-repo/attributes/RESERVED_V2_1517873333535.png",
+            "friendlyName": "Reserved Seating",
+            "description": "This showtime features reserved seating so you can pick your seats ahead of time."
+        },
+        "STANDARD-FORMAT": {
+            "id": "STANDARD-FORMAT",
+            "type": "SECONDARY",
+            "iconUrl": "https://images.atomtickets.com/image/upload/q_auto/v1/client-image-repo/attributes/STANDARD-FORMAT_V2_1517872101839.png",
+            "friendlyName": "Standard Format",
+            "description": "Traditional movie format with 16:9 aspect ratio."
+        }
+    }
+}
+              </pre></td>
+          </tr>
+          </tbody>
+      </table>
+      <br/>
     </body>
 </html>
