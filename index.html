@@ -308,7 +308,8 @@
     releaseDate: Option[String], // YYYY-MM-DD
     atomUserScore: Option[Double],
     productionUrl: Option[String],
-    distributor: Option[String]
+    distributor: Option[String],
+    imdbId: Option[String]
   )
       </pre>
       <pre id="ProductionDetailsResponseModel">
@@ -1109,7 +1110,8 @@ curl -X POST \
             "runtimeMinutes": 0,
             "releaseDate": "2018-09-14",
             "atomUserScore": 10.0,
-            "productionUrl": "http://rw-beta.atomtickets.com/movies/redirect/B00809994585"
+            "productionUrl": "http://rw-beta.atomtickets.com/movies/redirect/B00809994585",
+            "imdbId": "3829266"
         }
     ]
 }
@@ -1182,7 +1184,8 @@ curl -X GET \
             "runtimeMinutes": 124,
             "releaseDate": "2019-03-08",
             "atomUserScore": 6.7,
-            "productionUrl": "http://rw-beta.atomtickets.com/movies/redirect/B00362154100"
+            "productionUrl": "http://rw-beta.atomtickets.com/movies/redirect/B00362154100",
+             "imdbId": "4154664"
         }
     ]
 }
@@ -1249,7 +1252,8 @@ curl -X GET \
             ],
             "runtimeMinutes": 108,
             "releaseDate": "2018-08-03",
-            "productionUrl": "http://rw-beta.atomtickets.com/movies/redirect/B00849252296"
+            "productionUrl": "http://rw-beta.atomtickets.com/movies/redirect/B00849252296",
+             "imdbId":"5836316"
         }
     ]
 }
