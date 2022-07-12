@@ -476,7 +476,8 @@
     atomUserScore: Option[Double],
     productionUrl: Option[String],
     distributor: Option[String],
-    imdbId: Option[String]
+    imdbId: Option[String],
+    atomProductionId: Option[String]
   )
       </pre>
 <pre id="ProductionDetailsResponseModel">
@@ -1295,7 +1296,8 @@ curl -X POST \
             "releaseDate": "2018-09-14",
             "atomUserScore": 10.0,
             "productionUrl": "http://rw-beta.atomtickets.com/movies/redirect/B00809994585",
-            "imdbId": "3829266"
+            "imdbId": "3829266",
+            "atomProductionId":"227902"
         }
     ]
 }
