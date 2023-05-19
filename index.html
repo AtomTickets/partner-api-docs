@@ -406,7 +406,8 @@
     name: String,
     address: Address,
     properties: Properties,
-    venueUrl: Option[String]
+    venueUrl: Option[String],
+    atomVenueId: Option[String]
   )
       </pre>
 <pre id="VenueDetailModel">
@@ -937,7 +938,8 @@ curl -X GET \
                     "supportsConcessions": true,
                     "supported": true
                 },
-                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00110921804"
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00110921804",
+                "atomVenueId": "1341"
             },
             "kmDistance": 0.628527332801801
         },
@@ -957,7 +959,8 @@ curl -X GET \
                     "supportsConcessions": true,
                     "supported": true
                 },
-                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00401723167"
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00401723167",
+                "atomVenueId": "44608"
             },
             "kmDistance": 0.6647355560508852
         }
@@ -1035,7 +1038,8 @@ curl -X POST \
                     "supportsConcessions": false,
                     "supported": false
                 },
-                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C0057070265"
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C0057070265",
+                "atomVenueId": "20263"
             },
             "kmDistance": 2.383671824436259
         }
@@ -1091,7 +1095,8 @@ curl -X GET \
                     "supportsConcessions": true,
                     "supported": true
                 },
-                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00110921804"
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00110921804",
+                "atomVenueId": "1341"
             },
             "kmDistance": 0.628527332801801
         },
@@ -1111,7 +1116,8 @@ curl -X GET \
                     "supportsConcessions": true,
                     "supported": true
                 },
-                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00401723167"
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00401723167",
+                "atomVenueId": "11729"
             },
             "kmDistance": 0.6647355560508852
         }
@@ -1168,7 +1174,8 @@ curl -X GET \
                     "supportsConcessions": true,
                     "supported": true
                 },
-                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00889608713"
+                "venueUrl": "http://rw-beta.atomtickets.com/theaters/redirect/C00889608713",
+                "atomVenueId": "7364"
             }
         }
     ]
